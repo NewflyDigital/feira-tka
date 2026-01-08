@@ -1,0 +1,137 @@
+.background {
+  background-color: #000000;
+  width: 100%;
+  padding: 4rem 1rem;
+  color: #ffffff;
+}
+
+.interno {
+  max-width: 1280px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.rodapePrincipal {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.colLogo {
+  flex: 1;
+  min-width: 260px;
+}
+
+.logo {
+  max-width: 180px;
+  margin-bottom: 1rem;
+}
+
+.desc {
+  font-size: 14px;
+  color: #cccccc;
+  line-height: 1.5;
+  margin-bottom: 1rem;
+}
+
+.tagline {
+  font-size: 16px;
+  font-weight: 600;
+  color: #ffffff;
+}
+
+.tagline span {
+  color: #ff5d02;
+}
+
+.divisor {
+  width: 1px;
+  background-color: #ffffff33;
+  margin: 0 1rem;
+}
+
+.links {
+  flex: 2;
+  display: flex;
+  justify-content: space-between;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.coluna h4,
+.social h4 {
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  color: #ff5d02;
+}
+
+.coluna a {
+  display: block;
+  color: #cccccc;
+  font-size: 14px;
+  text-decoration: none;
+  margin-bottom: 0.5rem;
+  transition: color 0.3s;
+}
+
+.coluna a:hover {
+  color: #ffffff;
+}
+
+.social {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.icones {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.icones img {
+  width: 24px;
+  transition: transform 0.3s;
+}
+
+.icones img:hover {
+  transform: scale(1.1);
+}
+
+.site {
+  font-size: 14px;
+  color: #cccccc;
+}
+
+.copy {
+  text-align: center;
+  font-size: 13px;
+  color: #aaaaaa;
+  border-top: 1px solid #333;
+  padding-top: 1rem;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+  .rodapePrincipal {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .links {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .divisor {
+    display: none;
+  }
+
+  .copy {
+    font-size: 12px;
+  }
+}
