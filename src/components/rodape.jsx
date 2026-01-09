@@ -58,7 +58,7 @@ function Rodape() {
                     <img src="/linkedin.png" alt="LinkedIn" />
                   </a>
                 </Link>
-                <Link legacyBehavior href="https://www.instagram.com/tka">
+                <Link legacyBehavior href="https://www.instagram.com/tkacranes">
                   <a target="_blank">
                     <img src="/instagram.png" alt="Instagram" />
                   </a>
