@@ -40,7 +40,26 @@ export default function Home() {
         {/* CONTEÚDO */}
         <div className={styles.interno2}>
           <div className={styles.leftContent}>
-            <span className={styles.badge}>🌐 GLOBAL PRESENCE</span>
+            <span className={styles.badge2}>
+              <svg
+                className={styles.badgeIcon}
+                viewBox="0 0 24 24"
+                fill="none"
+                aria-hidden="true"
+              >
+                <path
+                  d="M2 12a10 10 0 1020 0 10 10 0 10-20 0z"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                />
+                <path
+                  d="M2 12h20M12 2a15 15 0 010 20M12 2a15 15 0 000 20"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                />
+              </svg>
+              GLOBAL PRESENCE
+            </span>
 
             <h2 className={styles.title}>
               Engineered for <br />
