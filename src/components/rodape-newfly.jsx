@@ -6,7 +6,7 @@ export default function RodapeNewFly() {
     <div className={styles.root}>
       <div className={styles.content}>
         <span>
-          Direitos Reservados 2025 | Desenvolvido por
+         Developed by
         </span>
         <Link legacyBehavior href="https://www.newflydigital.com.br/">
           <a target="_blank">

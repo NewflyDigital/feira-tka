@@ -16,12 +16,112 @@ export default function Home() {
 
   const [showVideo, setShowVideo] = useState(false);
 
+  const icons = {
+  shield: (
+    <svg viewBox="0 0 24 24" fill="none">
+      <path
+        d="M12 2L4 6v6c0 5 3.4 9.7 8 10 4.6-.3 8-5 8-10V6l-8-4z"
+        stroke="currentColor"
+        strokeWidth="2"
+        strokeLinejoin="round"
+      />
+    </svg>
+  ),
+
+  wrench: (
+    <svg viewBox="0 0 24 24" fill="none">
+      <path
+        d="M21 7a6 6 0 01-8.7 5.3L6 18.6a2 2 0 01-2.8-2.8l6.3-6.3A6 6 0 0021 7z"
+        stroke="currentColor"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  ),
+
+  package: (
+    <svg viewBox="0 0 24 24" fill="none">
+      <path
+        d="M21 16V8a2 2 0 00-1-1.7l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.7l7 4a2 2 0 002 0l7-4a2 2 0 001-1.7z"
+        stroke="currentColor"
+        strokeWidth="2"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M3.3 7L12 12l8.7-5"
+        stroke="currentColor"
+        strokeWidth="2"
+        strokeLinejoin="round"
+      />
+    </svg>
+  ),
+
+  energy: (
+    <svg viewBox="0 0 24 24" fill="none">
+      <path
+        d="M13 2L3 14h7l-1 8 10-12h-7l1-8z"
+        stroke="currentColor"
+        strokeWidth="2"
+        strokeLinejoin="round"
+      />
+    </svg>
+  ),
+
+  headset: (
+    <svg viewBox="0 0 24 24" fill="none">
+      <path
+        d="M4 15v-3a8 8 0 0116 0v3"
+        stroke="currentColor"
+        strokeWidth="2"
+      />
+      <rect
+        x="2"
+        y="13"
+        width="4"
+        height="6"
+        rx="2"
+        stroke="currentColor"
+        strokeWidth="2"
+      />
+      <rect
+        x="18"
+        y="13"
+        width="4"
+        height="6"
+        rx="2"
+        stroke="currentColor"
+        strokeWidth="2"
+      />
+    </svg>
+  ),
+
+  user: (
+    <svg viewBox="0 0 24 24" fill="none">
+      <circle
+        cx="12"
+        cy="7"
+        r="4"
+        stroke="currentColor"
+        strokeWidth="2"
+      />
+      <path
+        d="M5.5 21a6.5 6.5 0 0113 0"
+        stroke="currentColor"
+        strokeWidth="2"
+      />
+    </svg>
+  ),
+};
+
+
   return (
     <>
       <Menu />
       <a id="banner"></a>
       <Banner />
       {/* Seção Global Presence */}
+
       <section className={styles.globalPresence}>
         {/* VIDEO BACKGROUND */}
         <div className={styles.bgVideo}>
@@ -75,7 +175,7 @@ export default function Home() {
       </section>
 
       {/* Seção Product Portfolio */}
-      <section className={styles.productPortfolio}>
+      <section id="products" className={styles.productPortfolio}>
         <div className={styles.internoColumn}>
           <span className={styles.badge}>PRODUCT PORTFOLIO</span>
 
@@ -162,7 +262,7 @@ export default function Home() {
       </section>
 
       {/* Feature Boxes */}
-      <section className={styles.whyChoose}>
+      <section id="why-tka" className={styles.whyChoose}>
         <div className={styles.internoColumn}>
           <span className={styles.badge}>WHY CHOOSE TKA</span>
 
@@ -172,47 +272,63 @@ export default function Home() {
           </h2>
 
           <div className={styles.featuresGrid2}>
-            {[
-              ["High Durability", "Built to withstand the toughest conditions"],
-              ["Low Maintenance", "Reduced downtime"],
-              ["Available Spare Parts", "Global availability"],
-              ["Strength & Reliability", "Consistent performance"],
-              ["Fast Technical Support", "Expert assistance"],
-              ["Operator-Focused Design", "Intuitive controls"],
-            ].map(([title, text], i) => (
-              <div key={i} className={styles.featureBox}>
-                <div className={styles.iconWrapper}>
-                  <svg
-                    className={styles.mainIcon}
-                    viewBox="0 0 24 24"
-                    fill="none"
-                  >
-                    <path
-                      d="M12 2L4 6v6c0 5 3.4 9.7 8 10 4.6-.3 8-5 8-10V6l-8-4z"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                      strokeLinejoin="round"
-                    />
-                  </svg>
+  {[
+    {
+      icon: "shield",
+      title: "High Durability",
+      text: "Built to withstand the toughest conditions",
+    },
+    {
+      icon: "wrench",
+      title: "Low Maintenance",
+      text: "Reduced downtime",
+    },
+    {
+      icon: "package",
+      title: "Available Spare Parts",
+      text: "Global availability",
+    },
+    {
+      icon: "energy",
+      title: "Strength & Reliability",
+      text: "Consistent performance",
+    },
+    {
+      icon: "headset",
+      title: "Fast Technical Support",
+      text: "Expert assistance",
+    },
+    {
+      icon: "user",
+      title: "Operator-Focused Design",
+      text: "Intuitive controls",
+    },
+  ].map((item, i) => (
+    <div key={i} className={styles.featureBox}>
+      <div className={styles.iconWrapper}>
+        <div className={styles.mainIcon}>
+          {icons[item.icon]}
+        </div>
 
-                  <div className={styles.checkBadge}>
-                    <svg viewBox="0 0 24 24" fill="none">
-                      <path
-                        d="M5 12l4 4 10-10"
-                        stroke="currentColor"
-                        strokeWidth="2"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                      />
-                    </svg>
-                  </div>
-                </div>
+        <div className={styles.checkBadge}>
+          <svg viewBox="0 0 24 24" fill="none">
+            <path
+              d="M5 12l4 4 10-10"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            />
+          </svg>
+        </div>
+      </div>
 
-                <h4>{title}</h4>
-                <p>{text}</p>
-              </div>
-            ))}
-          </div>
+      <h4>{item.title}</h4>
+      <p>{item.text}</p>
+    </div>
+  ))}
+</div>
+
         </div>
       </section>
 
@@ -269,7 +385,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className={styles.conexpoSection}>
+      <section id="conexpo-2026" className={styles.conexpoSection}>
         <div className={styles.internoColumn}>
           <span className={styles.badge}>PRODUCT PORTFOLIO</span>
 
@@ -359,7 +475,120 @@ export default function Home() {
         </div>
       </section>
 
+      <section id="contact" className={styles.buildTogetherSection}>
+        <div className={styles.internoColumn}>
+          <span className={styles.badge}>CONNECT WITH US</span>
+
+          <h2 className={styles.title3}>
+            Let's Build <span>Together</span>
+          </h2>
+
+          <p className={styles.paragrafoLight}>
+            Schedule a meeting at CONEXPO 2026 or subscribe to stay connected
+            with TKA's global developments.
+          </p>
+
+          <div className={styles.buildGrid}>
+            {/* LEFT CARD */}
+            <div className={styles.buildCard}>
+              <div className={styles.cardHeader}>
+                <span className={styles.cardIcon}>
+                  <svg viewBox="0 0 24 24" fill="none">
+                    <path
+                      d="M8 7V3m8 4V3M3 11h18M5 5h14a2 2 0 012 2v12a2 2 0 01-2 2H5a2 2 0 01-2-2V7a2 2 0 012-2z"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                    />
+                  </svg>
+                </span>
+                <div>
+                  <h4>Schedule a Meeting</h4>
+                  <p>Meet us at CONEXPO 2026</p>
+                </div>
+              </div>
+
+              <form className={styles.form}>
+                <label>
+                  Name *
+                  <input type="text" placeholder="Your full name" />
+                </label>
+
+                <label>
+                  Company *
+                  <input type="text" placeholder="Company name" />
+                </label>
+
+                <div className={styles.formRow}>
+                  <label>
+                    Country *
+                    <input type="text" placeholder="Country" />
+                  </label>
+
+                  <label>
+                    Interest *
+                    <select>
+                      <option>Select</option>
+                      <option>Cranes</option>
+                      <option>Platforms</option>
+                      <option>Services</option>
+                    </select>
+                  </label>
+                </div>
+
+                <label>
+                  Email *
+                  <input type="email" placeholder="your@email.com" />
+                </label>
+
+                <button type="submit" className={styles.btnBlueFull}>
+                  ✈ Schedule a Meeting
+                </button>
+              </form>
+            </div>
+
+            {/* RIGHT CARD */}
+            <div className={styles.buildCard}>
+              <div className={styles.cardHeader}>
+                <span className={styles.cardIcon}>✉</span>
+                <div>
+                  <h4>TKA Global News</h4>
+                  <p>Stay connected with TKA</p>
+                </div>
+              </div>
+
+              <p className={styles.cardText}>
+                Receive product updates, technical insights, and global news
+                directly to your inbox.
+              </p>
+
+              <form className={styles.form}>
+                <label>
+                  Name *
+                  <input type="text" placeholder="Your full name" />
+                </label>
+
+                <label>
+                  Email *
+                  <input type="email" placeholder="your@email.com" />
+                </label>
+
+                <label>
+                  Country *
+                  <input type="text" placeholder="Country" />
+                </label>
+
+                <button type="submit" className={styles.btnBlueFull}>
+                  ✉ Subscribe to TKA Global News
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <Rodape />
+      <RodapeNewFly />
       <Whats />
     </>
   );

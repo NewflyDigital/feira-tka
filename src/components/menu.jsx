@@ -17,9 +17,7 @@ export default function Menu() {
 
   return (
     <header
-      className={`${styles.header} ${
-        scrolled ? styles.menuAlternative : ""
-      }`}
+      className={`${styles.header} ${scrolled ? styles.menuAlternative : ""}`}
     >
       <div className={styles.container}>
         <Link legacyBehavior passHref href="/" className={styles.logo}>
@@ -27,13 +25,26 @@ export default function Menu() {
         </Link>
 
         <nav className={styles.nav}>
-          <Link legacyBehavior passHref href="/produtos">Products</Link>
-          <Link legacyBehavior passHref href="/conexpo-2026">CONEXPO 2026</Link>
-          <Link legacyBehavior passHref href="/why-tka">Why TKA</Link>
-          <Link legacyBehavior passHref href="/contact">Contact</Link>
+          <Link legacyBehavior passHref href="#products">
+            Products
+          </Link>
+          <Link legacyBehavior passHref href="#conexpo-2026">
+            CONEXPO 2026
+          </Link>
+          <Link legacyBehavior passHref href="#why-tka">
+            Why TKA
+          </Link>
+          <Link legacyBehavior passHref href="#contact">
+            Contact
+          </Link>
         </nav>
 
-        <Link legacyBehavior passHref href="tel:+555432023000" className={styles.cta}>
+        <Link
+          legacyBehavior
+          passHref
+          href="tel:+555432023000"
+          className={styles.cta}
+        >
           +55 54 3202.3000
         </Link>
 
@@ -48,15 +59,46 @@ export default function Menu() {
 
       {open && (
         <div className={styles.mobileMenu}>
-          <Link legacyBehavior passHref href="/produtos" onClick={() => setOpen(false)}>Products</Link>
-          <Link legacyBehavior passHref href="/why-tka" onClick={() => setOpen(false)}>Why TKA</Link>
-          <Link legacyBehavior passHref href="/conexpo-2026" onClick={() => setOpen(false)}>CONEXPO 2026</Link>
-          <Link legacyBehavior passHref href="/contact" onClick={() => setOpen(false)}>Contact</Link>
+          <Link
+            legacyBehavior
+            passHref
+            href="#products"
+            onClick={() => setOpen(false)}
+          >
+            Products
+          </Link>
 
           <Link
             legacyBehavior
             passHref
-            href="/conexpo-2026"
+            href="#why-tka"
+            onClick={() => setOpen(false)}
+          >
+            Why TKA
+          </Link>
+
+          <Link
+            legacyBehavior
+            passHref
+            href="#conexpo-2026"
+            onClick={() => setOpen(false)}
+          >
+            CONEXPO 2026
+          </Link>
+
+          <Link
+            legacyBehavior
+            passHref
+            href="#contact"
+            onClick={() => setOpen(false)}
+          >
+            Contact
+          </Link>
+
+          <Link
+            legacyBehavior
+            passHref
+            href="#conexpo-2026"
             className={styles.mobileCta}
             onClick={() => setOpen(false)}
           >
