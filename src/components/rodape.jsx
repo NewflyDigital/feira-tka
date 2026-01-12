@@ -25,16 +25,16 @@ function Rodape() {
           {/* QUICK LINKS */}
           <div className={styles.coluna}>
             <h4>Quick Links</h4>
-            <Link legacyBehavior href="/produtos">
+            <Link legacyBehavior href="#products">
               <a>Products</a>
             </Link>
-            <Link legacyBehavior href="/why-tka">
+            <Link legacyBehavior href="#why-tka">
               <a>Why TKA</a>
             </Link>
-            <Link legacyBehavior href="/conexpo-2026">
+            <Link legacyBehavior href="#conexpo-2026">
               <a>CONEXPO 2026</a>
             </Link>
-            <Link legacyBehavior href="/contato">
+            <Link legacyBehavior href="#contact">
               <a>Contact</a>
             </Link>
           </div>
