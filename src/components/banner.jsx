@@ -30,7 +30,7 @@ export default function Banner() {
         </p>
 
         <div className={styles.actions}>
-          <Link legacyBehavior passHref href="/conexpo-2026">
+          <Link legacyBehavior passHref href="https://directory.conexpoconagg.com/8_0/floorplan/?hallID=L&selectedBooth=D1241">
             <button className={styles.btnBlue}>Meet Us at CONEXPO →</button>
           </Link>
 
@@ -41,9 +41,16 @@ export default function Banner() {
             ▶ Watch Video
           </button>
 
+          {/*
           <button className={styles.btnDark} onClick={() => setShowModal(true)}>
             Become a Dealer
           </button>
+          */}
+          <Link legacyBehavior passHref href="mailto:sales@tkacranes.com">
+          <button className={styles.btnDark} >
+            Become a Dealer
+          </button>
+          </Link>
         </div>
       </div>
 

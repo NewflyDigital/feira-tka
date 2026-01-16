@@ -17,109 +17,191 @@ export default function Home() {
   const [showVideo, setShowVideo] = useState(false);
 
   const icons = {
-  shield: (
-    <svg viewBox="0 0 24 24" fill="none">
-      <path
-        d="M12 2L4 6v6c0 5 3.4 9.7 8 10 4.6-.3 8-5 8-10V6l-8-4z"
-        stroke="currentColor"
-        strokeWidth="2"
-        strokeLinejoin="round"
-      />
-    </svg>
-  ),
+    shield: (
+      <svg viewBox="0 0 24 24" fill="none">
+        <path
+          d="M12 2L4 6v6c0 5 3.4 9.7 8 10 4.6-.3 8-5 8-10V6l-8-4z"
+          stroke="currentColor"
+          strokeWidth="2"
+          strokeLinejoin="round"
+        />
+      </svg>
+    ),
 
-  wrench: (
-    <svg viewBox="0 0 24 24" fill="none">
-      <path
-        d="M21 7a6 6 0 01-8.7 5.3L6 18.6a2 2 0 01-2.8-2.8l6.3-6.3A6 6 0 0021 7z"
-        stroke="currentColor"
-        strokeWidth="2"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-    </svg>
-  ),
+    wrench: (
+      <svg viewBox="0 0 24 24" fill="none">
+        <path
+          d="M21 7a6 6 0 01-8.7 5.3L6 18.6a2 2 0 01-2.8-2.8l6.3-6.3A6 6 0 0021 7z"
+          stroke="currentColor"
+          strokeWidth="2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
+      </svg>
+    ),
 
-  package: (
-    <svg viewBox="0 0 24 24" fill="none">
-      <path
-        d="M21 16V8a2 2 0 00-1-1.7l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.7l7 4a2 2 0 002 0l7-4a2 2 0 001-1.7z"
-        stroke="currentColor"
-        strokeWidth="2"
-        strokeLinejoin="round"
-      />
-      <path
-        d="M3.3 7L12 12l8.7-5"
-        stroke="currentColor"
-        strokeWidth="2"
-        strokeLinejoin="round"
-      />
-    </svg>
-  ),
+    package: (
+      <svg viewBox="0 0 24 24" fill="none">
+        <path
+          d="M21 16V8a2 2 0 00-1-1.7l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.7l7 4a2 2 0 002 0l7-4a2 2 0 001-1.7z"
+          stroke="currentColor"
+          strokeWidth="2"
+          strokeLinejoin="round"
+        />
+        <path
+          d="M3.3 7L12 12l8.7-5"
+          stroke="currentColor"
+          strokeWidth="2"
+          strokeLinejoin="round"
+        />
+      </svg>
+    ),
 
-  energy: (
-    <svg viewBox="0 0 24 24" fill="none">
-      <path
-        d="M13 2L3 14h7l-1 8 10-12h-7l1-8z"
-        stroke="currentColor"
-        strokeWidth="2"
-        strokeLinejoin="round"
-      />
-    </svg>
-  ),
+    energy: (
+      <svg viewBox="0 0 24 24" fill="none">
+        <path
+          d="M13 2L3 14h7l-1 8 10-12h-7l1-8z"
+          stroke="currentColor"
+          strokeWidth="2"
+          strokeLinejoin="round"
+        />
+      </svg>
+    ),
 
-  headset: (
-    <svg viewBox="0 0 24 24" fill="none">
-      <path
-        d="M4 15v-3a8 8 0 0116 0v3"
-        stroke="currentColor"
-        strokeWidth="2"
-      />
-      <rect
-        x="2"
-        y="13"
-        width="4"
-        height="6"
-        rx="2"
-        stroke="currentColor"
-        strokeWidth="2"
-      />
-      <rect
-        x="18"
-        y="13"
-        width="4"
-        height="6"
-        rx="2"
-        stroke="currentColor"
-        strokeWidth="2"
-      />
-    </svg>
-  ),
+    headset: (
+      <svg viewBox="0 0 24 24" fill="none">
+        <path
+          d="M4 15v-3a8 8 0 0116 0v3"
+          stroke="currentColor"
+          strokeWidth="2"
+        />
+        <rect
+          x="2"
+          y="13"
+          width="4"
+          height="6"
+          rx="2"
+          stroke="currentColor"
+          strokeWidth="2"
+        />
+        <rect
+          x="18"
+          y="13"
+          width="4"
+          height="6"
+          rx="2"
+          stroke="currentColor"
+          strokeWidth="2"
+        />
+      </svg>
+    ),
 
-  user: (
-    <svg viewBox="0 0 24 24" fill="none">
-      <circle
-        cx="12"
-        cy="7"
-        r="4"
-        stroke="currentColor"
-        strokeWidth="2"
-      />
-      <path
-        d="M5.5 21a6.5 6.5 0 0113 0"
-        stroke="currentColor"
-        strokeWidth="2"
-      />
-    </svg>
-  ),
-};
-
+    user: (
+      <svg viewBox="0 0 24 24" fill="none">
+        <circle cx="12" cy="7" r="4" stroke="currentColor" strokeWidth="2" />
+        <path
+          d="M5.5 21a6.5 6.5 0 0113 0"
+          stroke="currentColor"
+          strokeWidth="2"
+        />
+      </svg>
+    ),
+  };
 
   return (
     <>
       <Menu />
       <a id="banner"></a>
       <Banner />
+
+      {/* Seção Product Portfolio */}
+      <section id="products" className={styles.productPortfolio}>
+        <div className={styles.internoColumn}>
+          <span className={styles.badge}>PRODUCT PORTFOLIO</span>
+
+          <h2 className={styles.title}>
+            Solutions Built to <span>Perform</span>
+          </h2>
+
+          <p className={styles.paragrafoLight}>
+            From service cranes to aerial platforms, each TKA solution is
+            engineered for maximum uptime and operational efficiency.
+          </p>
+          {/*
+
+          <div className={styles.featuresGrid}>
+            <div className={styles.featureItem}>
+              <h4>High Performance</h4>
+              <p>Designed for heavy-duty operations and continuous use.</p>
+            </div>
+
+            <div className={styles.featureItem}>
+              <h4>Low Maintenance</h4>
+              <p>Fewer downtimes, more productivity.</p>
+            </div>
+
+            <div className={styles.featureItem}>
+              <h4>Simple Operation</h4>
+              <p>Intuitive controls with full focus on the operator.</p>
+            </div>
+
+            <div className={styles.featureItem}>
+              <h4>Robust Structure</h4>
+              <p>Reinforced construction for maximum durability.</p>
+            </div>
+          </div>
+*/}
+
+          <div className={styles.cards}>
+            {[
+              {
+                img: "/static/images/Linha-Canivete.jpg",
+                tag: "Knucle Boom",
+                title: "TKA 66.700",
+                sub: "Versatility and efficiency",
+                desc: "Compact and robust cranes, designed for agile operations, functional reach, and efficient vehicle integration.",
+                link: "https://tkacranes.com/produtos?c=01_canivete",
+              },
+              {
+                img: "/static/images/Linha-Cesto.jpg",
+                tag: "Aerial Lifts",
+                title: "15.5 DI",
+                sub: "Safety and precision at height",
+                desc: "Stability and control for air operations with a focus on safety and efficiency.",
+                link: "https://tkacranes.com/en/produtos?c=04_cestos",
+              },
+              {
+                img: "/static/images/Linha-ServiceCrane.jpg",
+                tag: "Service Crane",
+                title: "Service Crane",
+                sub: "",
+                desc: "Global engineering for the American market Lifting solutions developed specifically for the United States, with the expertise of a world-leading manufacturer.",
+                link: "https://drive.google.com/file/d/1w3xM5CWklZc-2-IP5RsmlFlWoTBseJPQ/view?usp=sharing",
+              },
+            ].map((item, i) => (
+              <div key={i} className={styles.card}>
+                <div className={styles.cardImage}>
+                  <span className={styles.cardTag}>{item.tag}</span>
+                  <img src={item.img} alt={item.title} />
+                </div>
+
+                <h4>{item.title}</h4>
+                <p className={styles.cardSubtitle}>{item.sub}</p>
+                <p className={styles.desc}>{item.desc}</p>
+
+                <a
+                  href={item.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={styles.learnMore}
+                >
+                  Learn More →
+                </a>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
       {/* Seção Global Presence */}
 
       <section className={styles.globalPresence}>
@@ -173,94 +255,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
-      {/* Seção Product Portfolio */}
-      <section id="products" className={styles.productPortfolio}>
-        <div className={styles.internoColumn}>
-          <span className={styles.badge}>PRODUCT PORTFOLIO</span>
-
-          <h2 className={styles.title}>
-            Solutions Built to <span>Perform</span>
-          </h2>
-
-          <p className={styles.paragrafoLight}>
-            From service cranes to aerial platforms, each TKA solution is
-            engineered for maximum uptime and operational efficiency.
-          </p>
-
-          <div className={styles.featuresGrid}>
-            <div className={styles.featureItem}>
-              <h4>High Performance</h4>
-              <p>Designed for heavy-duty operations and continuous use.</p>
-            </div>
-
-            <div className={styles.featureItem}>
-              <h4>Low Maintenance</h4>
-              <p>Fewer downtimes, more productivity.</p>
-            </div>
-
-            <div className={styles.featureItem}>
-              <h4>Simple Operation</h4>
-              <p>Intuitive controls with full focus on the operator.</p>
-            </div>
-
-            <div className={styles.featureItem}>
-              <h4>Robust Structure</h4>
-              <p>Reinforced construction for maximum durability.</p>
-            </div>
-          </div>
-
-          <div className={styles.cards}>
-            {[
-              {
-                img: "/static/images/17-900.png",
-                tag: "Easy maintenance",
-                title: "TKA 17.900",
-                sub: "Heavy-duty construction",
-                desc: "Optimal balance of reach and capacity for versatile jobsite applications",
-                link: "https://tkacranes.com/produtos/17.900c",
-              },
-              {
-                img: "/static/images/23-700.png",
-                tag: "Continuous performance",
-                title: "TKA 23.700",
-                sub: "Medium-duty lifting operations",
-                desc: "Extended reach capabilities with enhanced load stability",
-                link: "https://tkacranes.com/produtos/23700c",
-              },
-              {
-                img: "/static/images/50-700.png",
-                tag: "Intuitive operation",
-                title: "TKA 50.700",
-                sub: "Industrial & infrastructure",
-                desc: "Maximum lifting capacity for the most demanding operations",
-                link: "https://tkacranes.com/produtos/50700c",
-              },
-            ].map((item, i) => (
-              <div key={i} className={styles.card}>
-                <div className={styles.cardImage}>
-                  <span className={styles.cardTag}>{item.tag}</span>
-                  <img src={item.img} alt={item.title} />
-                </div>
-
-                <h4>{item.title}</h4>
-                <p className={styles.cardSubtitle}>{item.sub}</p>
-                <p className={styles.desc}>{item.desc}</p>
-
-                <a
-                  href={item.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className={styles.learnMore}
-                >
-                  Learn More →
-                </a>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* Feature Boxes */}
       <section id="why-tka" className={styles.whyChoose}>
         <div className={styles.internoColumn}>
@@ -272,74 +266,74 @@ export default function Home() {
           </h2>
 
           <div className={styles.featuresGrid2}>
-  {[
-    {
-      icon: "shield",
-      title: "High Durability",
-      text: "Built to withstand the toughest conditions",
-    },
-    {
-      icon: "wrench",
-      title: "Low Maintenance",
-      text: "Reduced downtime",
-    },
-    {
-      icon: "package",
-      title: "Available Spare Parts",
-      text: "Global availability",
-    },
-    {
-      icon: "energy",
-      title: "Strength & Reliability",
-      text: "Consistent performance",
-    },
-    {
-      icon: "headset",
-      title: "Fast Technical Support",
-      text: "Expert assistance",
-    },
-    {
-      icon: "user",
-      title: "Operator-Focused Design",
-      text: "Intuitive controls",
-    },
-  ].map((item, i) => (
-    <div key={i} className={styles.featureBox}>
-      <div className={styles.iconWrapper}>
-        <div className={styles.mainIcon}>
-          {icons[item.icon]}
-        </div>
+            {[
+              {
+                icon: "shield",
+                title: "High Durability",
+                text: "Built to withstand the toughest conditions",
+              },
+              {
+                icon: "wrench",
+                title: "Low Maintenance",
+                text: "Reduced downtime",
+              },
+              {
+                icon: "package",
+                title: "Available Spare Parts",
+                text: "Global availability",
+              },
+              {
+                icon: "energy",
+                title: "Strength & Reliability",
+                text: "Consistent performance",
+              },
+              {
+                icon: "headset",
+                title: "Fast Technical Support",
+                text: "Expert assistance",
+              },
+              {
+                icon: "user",
+                title: "Operator-Focused Design",
+                text: "Intuitive controls",
+              },
+            ].map((item, i) => (
+              <div key={i} className={styles.featureBox}>
+                <div className={styles.iconWrapper}>
+                  <div className={styles.mainIcon}>{icons[item.icon]}</div>
 
-        <div className={styles.checkBadge}>
-          <svg viewBox="0 0 24 24" fill="none">
-            <path
-              d="M5 12l4 4 10-10"
-              stroke="currentColor"
-              strokeWidth="2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            />
-          </svg>
-        </div>
-      </div>
+                  <div className={styles.checkBadge}>
+                    <svg viewBox="0 0 24 24" fill="none">
+                      <path
+                        d="M5 12l4 4 10-10"
+                        stroke="currentColor"
+                        strokeWidth="2"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      />
+                    </svg>
+                  </div>
+                </div>
 
-      <h4>{item.title}</h4>
-      <p>{item.text}</p>
-    </div>
-  ))}
-</div>
-
+                <h4>{item.title}</h4>
+                <p>{item.text}</p>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
+      {/*
+
+
 
       <section className={styles.performanceSection}>
         <div className={styles.performanceBox}>
-          {/* Linha laranja superior */}
+        
           <div className={styles.topAccent}></div>
 
-          {/* Conteúdo */}
+        
           <div className={styles.performanceContent}>
-            {/* LEFT */}
+         
             <div className={styles.performanceLeft}>
               <h2 className={styles.performanceTitle}>
                 Designed to Work Harder.
@@ -354,7 +348,7 @@ export default function Home() {
               </p>
             </div>
 
-            {/* RIGHT */}
+      
             <div className={styles.performanceRight}>
               {[
                 "Proven durability",
@@ -384,6 +378,8 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+*/}
 
       <section id="conexpo-2026" className={styles.conexpoSection}>
         <div className={styles.internoColumn}>
@@ -463,14 +459,13 @@ export default function Home() {
             <div className={styles.conexpoRight}>
               <div className={styles.imageHolder}>
                 <img
-                  src="/static/images/conexpo-map.png" // seu PNG aqui
+                  src="/static/images/Conexpo.jpg" // seu PNG aqui
                   alt="TKA Stand Location"
                   className={styles.centerImage}
                 />
               </div>
-
-              <span className={styles.location}>Las Vegas, NV</span>
             </div>
+            <span className={styles.location}>Las Vegas, NV</span>
           </div>
         </div>
       </section>
@@ -546,9 +541,30 @@ export default function Home() {
                 </button>
               </form>
             </div>
+            <a
+              href="https://wa.me/555481552000"
+              target="_blank"
+              rel="noopener noreferrer"
+              className={`${styles.buildCard} ${styles.whatsCard}`}
+            >
+              <div className={styles.cardHeader}>
+                <span className={styles.cardIcon}>💬</span>
+                <div>
+                  <h4>WhatsApp TKA</h4>
+                  <p>Speak to our team now.</p>
+                </div>
+              </div>
 
-            {/* RIGHT CARD */}
-            <div className={styles.buildCard}>
+              <p className={styles.cardText}>
+                Quick service for questions, quotes, and technical support.
+Click and talk directly to us.
+              </p>
+
+              <div className={styles.whatsButton}>CALL US ON WHATSAPP</div>
+            </a>
+
+            {/* RIGHT CARD
+             <div className={styles.buildCard}>
               <div className={styles.cardHeader}>
                 <span className={styles.cardIcon}>✉</span>
                 <div>
@@ -583,6 +599,7 @@ export default function Home() {
                 </button>
               </form>
             </div>
+            */}
           </div>
         </div>
       </section>
