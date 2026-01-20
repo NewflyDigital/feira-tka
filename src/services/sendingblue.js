@@ -1,12 +1,29 @@
 import axios from "axios";
 
-const apiKey = process.env.NEXT_PUBLIC_BREVO_API_KEY; // ✅ sem NEXT_PUBLIC_
+const apiKey = process.env.NEXT_BREVO_API_KEY;
 
-export const SendContato = async ({ nome = "", email = "", telefone = "", empresa = "", mensagem = "" }) => {
+export const SendContato = async ({
+  nome = "",
+  email = "",
+  telefone = "",
+  empresa = "",
+  mensagem = "",
+}) => {
+  console.log("📩 [SendContato] Iniciando envio...");
+  console.log("📦 Dados recebidos:", {
+    nome,
+    email,
+    telefone,
+    empresa,
+    mensagem,
+  });
+
   if (!apiKey) {
-    console.error("❌ ERRO: Chave da API Brevo não encontrada!");
-    throw new Error("A chave da API Brevo não foi configurada.");
+    console.error("❌ API KEY NÃO ENCONTRADA");
+    throw new Error("API Key Brevo não configurada");
   }
+
+  console.log("🔐 API KEY (primeiros 6):", apiKey.slice(0, 6));
 
   const headers = {
     accept: "application/json",
@@ -14,40 +31,68 @@ export const SendContato = async ({ nome = "", email = "", telefone = "", empres
     "content-type": "application/json",
   };
 
-  const subject = "Contato do Site";
+  console.log("🧾 Headers configurados");
+
+  // 🔍 Teste de conta (opcional, mas ótimo)
+  await axios.get("https://api.brevo.com/v3/account", {
+    headers: { "api-key": apiKey },
+  });
+  console.log("🏦 Conta Brevo acessível");
 
   const htmlContent = `
     <html>
       <body>
+        <h2>Novo contato - Site TKA</h2>
         <p><b>Nome:</b> ${nome}</p>
+        <p><b>Empresa:</b> ${empresa}</p>
         <p><b>Email:</b> ${email}</p>
         <p><b>Telefone:</b> ${telefone}</p>
-        <p><b>Empresa:</b> ${empresa}</p>
-        <p><b>Mensagem:</b> ${mensagem}</p>
+        <p><b>Mensagem:</b><br/>${mensagem.replace(/\n/g, "<br/>")}</p>
       </body>
     </html>
   `;
 
+  console.log("📝 HTML gerado com sucesso");
+
   const body = {
     sender: {
-      name: `Site NSA Implementos`,
-      email: `nsabrevo@gmail.com`, // remetente autorizado na Brevo
+      name: "DEBUG TKA",
+      email: "tkacranes.gestao.mkt@gmail.com", // sender seguro
     },
     to: [
       {
-        email: `contato@nsaimplementos.com.br`, // destinatário
-        name: `Site NSA Implementos`,
+        email: "fabioa.slima1@gmail.com",
+        name: "Contato TKA",
       },
     ],
-    subject,
+    subject: `DEBUG ENV - ${process.env.NODE_ENV} - ${new Date().toISOString()}`,
     htmlContent,
   };
 
+  console.log("📨 Payload:", JSON.stringify(body, null, 2));
+  console.log("📤 Enviando para Brevo...");
+
   try {
-    const response = await axios.post("https://api.brevo.com/v3/smtp/email", body, { headers });
+    const response = await axios.post(
+      "https://api.brevo.com/v3/smtp/email",
+      body,
+      { headers }
+    );
+
+    console.log("✅ EMAIL ENVIADO COM SUCESSO");
+    console.log("📬 Resposta Brevo:", response.data);
+
     return response.data;
   } catch (error) {
-    console.error("❌ Erro ao enviar e-mail:", error.response?.data || error.message);
+    console.error("❌ ERRO AO ENVIAR EMAIL");
+
+    if (error.response) {
+      console.error("📛 Status:", error.response.status);
+      console.error("📛 Dados:", error.response.data);
+    } else {
+      console.error("📛 Mensagem:", error.message);
+    }
+
     throw error;
   }
 };

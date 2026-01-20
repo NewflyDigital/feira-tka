@@ -71,7 +71,7 @@ function Rodape() {
                 </a>
               </Link>
 
-              <Link legacyBehavior href="https://www.linkedin.com/company/tka">
+              <Link legacyBehavior href="https://www.linkedin.com/company/tkacranes/">
                 <a target="_blank" className={styles.iconBox}>
                   in
                 </a>

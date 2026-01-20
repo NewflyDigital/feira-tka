@@ -108,6 +108,62 @@ export default function Home() {
     ),
   };
 
+  const [form, setForm] = useState({
+    nome: "",
+    empresa: "",
+    telefone: "",
+    email: "",
+    interesse: "",
+    pais: "",
+  });
+
+  const [loading, setLoading] = useState(false);
+  const [success, setSuccess] = useState(false);
+  const [error, setError] = useState(false);
+
+  const handleChange = (e) => {
+    setForm({ ...form, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setLoading(true);
+    setError(false);
+
+    try {
+      const res = await fetch("/api/contato", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          nome: form.nome,
+          email: form.email,
+          telefone: form.telefone,
+          empresa: form.empresa,
+          mensagem: `
+            País: ${form.pais}
+            Interesse: ${form.interesse}
+          `,
+        }),
+      });
+
+      if (!res.ok) throw new Error();
+
+      setSuccess(true);
+      setForm({
+        nome: "",
+        empresa: "",
+        telefone: "",
+        email: "",
+        interesse: "",
+        pais: "",
+      });
+    } catch {
+      setError(true);
+    } finally {
+      setLoading(false);
+    }
+  };
+
   return (
     <>
       <Menu />
@@ -157,7 +213,7 @@ export default function Home() {
               {
                 img: "/static/images/Linha-Canivete.jpg",
                 tag: "Knucle Boom",
-                title: "TKA 66.700",
+                title: "",
                 sub: "Versatility and efficiency",
                 desc: "Compact and robust cranes, designed for agile operations, functional reach, and efficient vehicle integration.",
                 link: "https://tkacranes.com/produtos?c=01_canivete",
@@ -165,7 +221,7 @@ export default function Home() {
               {
                 img: "/static/images/Linha-Cesto.jpg",
                 tag: "Aerial Lifts",
-                title: "15.5 DI",
+                title: "",
                 sub: "Safety and precision at height",
                 desc: "Stability and control for air operations with a focus on safety and efficiency.",
                 link: "https://tkacranes.com/en/produtos?c=04_cestos",
@@ -173,8 +229,8 @@ export default function Home() {
               {
                 img: "/static/images/Linha-ServiceCrane.jpg",
                 tag: "Service Crane",
-                title: "Service Crane",
-                sub: "",
+                title: "",
+                sub: "Service Crane",
                 desc: "Global engineering for the American market Lifting solutions developed specifically for the United States, with the expertise of a world-leading manufacturer.",
                 link: "https://drive.google.com/file/d/1w3xM5CWklZc-2-IP5RsmlFlWoTBseJPQ/view?usp=sharing",
               },
@@ -382,6 +438,7 @@ export default function Home() {
 */}
 
       <section id="conexpo-2026" className={styles.conexpoSection}>
+        {/*
         <div className={styles.internoColumn}>
           <span className={styles.badge}>PRODUCT PORTFOLIO</span>
 
@@ -394,6 +451,7 @@ export default function Home() {
             engineered for maximum uptime and operational efficiency.
           </p>
         </div>
+    */}
 
         <div className={styles.conexpoContainer}>
           <div className={styles.conexpoBox}>
@@ -502,7 +560,7 @@ export default function Home() {
                   <p>Meet us at CONEXPO 2026</p>
                 </div>
               </div>
-
+              {/*
               <form className={styles.form}>
                 <label>
                   Name *
@@ -540,6 +598,87 @@ export default function Home() {
                   ✈ Schedule a Meeting
                 </button>
               </form>
+              */}
+              
+              <form className={styles.form} onSubmit={handleSubmit}>
+                <label>
+                  Name *
+                  <input
+                    name="nome"
+                    value={form.nome}
+                    onChange={handleChange}
+                    required
+                    placeholder="Your full name"
+                  />
+                </label>
+
+                <label>
+                  Company *
+                  <input
+                    name="empresa"
+                    value={form.empresa}
+                    onChange={handleChange}
+                    required
+                    placeholder="Company name"
+                  />
+                </label>
+
+                <div className={styles.formRow}>
+                  <label>
+                    Country *
+                    <input
+                      name="pais"
+                      value={form.pais}
+                      onChange={handleChange}
+                      required
+                      placeholder="Country"
+                    />
+                  </label>
+
+                  <label>
+                    Interest *
+                    <select
+                      name="interesse"
+                      value={form.interesse}
+                      onChange={handleChange}
+                      required
+                    >
+                      <option value="">Select</option>
+                      <option>Cranes</option>
+                      <option>Platforms</option>
+                      <option>Services</option>
+                    </select>
+                  </label>
+                </div>
+
+                <label>
+                  Email *
+                  <input
+                    type="email"
+                    name="email"
+                    value={form.email}
+                    onChange={handleChange}
+                    required
+                    placeholder="your@email.com"
+                  />
+                </label>
+
+                <button
+                  type="submit"
+                  className={styles.btnBlueFull}
+                  disabled={loading}
+                >
+                  {loading ? "Sending..." : "✈ Schedule a Meeting"}
+                </button>
+
+                {success && (
+                  <p className={styles.success}>Message sent successfully!</p>
+                )}
+                {error && (
+                  <p className={styles.error}>Error sending message.</p>
+                )}
+              </form>
+              
             </div>
             <a
               href="https://wa.me/555481552000"
@@ -557,7 +696,7 @@ export default function Home() {
 
               <p className={styles.cardText}>
                 Quick service for questions, quotes, and technical support.
-Click and talk directly to us.
+                Click and talk directly to us.
               </p>
 
               <div className={styles.whatsButton}>CALL US ON WHATSAPP</div>

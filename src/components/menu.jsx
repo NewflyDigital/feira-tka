@@ -38,6 +38,7 @@ export default function Menu() {
             Contact
           </Link>
         </nav>
+        {/*
 
         <Link
           legacyBehavior
@@ -47,6 +48,7 @@ export default function Menu() {
         >
           +55 54 3202.3000
         </Link>
+*/}
 
         <button
           className={styles.mobileButton}
