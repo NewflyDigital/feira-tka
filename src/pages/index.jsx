@@ -212,10 +212,10 @@ export default function Home() {
             {[
               {
                 img: "/static/images/Linha-Canivete.jpg",
-                tag: "Knucle Boom",
+                tag: "Knuckle Boom",
                 title: "",
                 sub: "Versatility and efficiency",
-                desc: "Compact and robust cranes, designed for agile operations, functional reach, and efficient vehicle integration.",
+                desc: "Compact and robust cranes engineered for agile operation, superior reach, and optimized vehicle integration.",
                 link: "https://tkacranes.com/produtos?c=01_canivete",
               },
               {
@@ -223,7 +223,7 @@ export default function Home() {
                 tag: "Aerial Lifts",
                 title: "",
                 sub: "Safety and precision at height",
-                desc: "Stability and control for air operations with a focus on safety and efficiency.",
+                desc: "Superior stability and precise control for aerial operations, with a strong focus on safety and efficiency.",
                 link: "https://tkacranes.com/en/produtos?c=04_cestos",
               },
               {
@@ -231,7 +231,7 @@ export default function Home() {
                 tag: "Service Crane",
                 title: "",
                 sub: "Service Crane",
-                desc: "Global engineering for the American market Lifting solutions developed specifically for the United States, with the expertise of a world-leading manufacturer.",
+                desc: "Global engineering for the American market. Lifting solutions developed specifically for the United States, backed by the expertise of a world-leading manufacturer.",
                 link: "https://drive.google.com/file/d/1w3xM5CWklZc-2-IP5RsmlFlWoTBseJPQ/view?usp=sharing",
               },
             ].map((item, i) => (
