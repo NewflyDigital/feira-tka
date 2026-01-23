@@ -33,10 +33,6 @@ export const SendContato = async ({
 
   console.log("🧾 Headers configurados");
 
-  // 🔍 Teste de conta (opcional, mas ótimo)
-  await axios.get("https://api.brevo.com/v3/account", {
-    headers: { "api-key": apiKey },
-  });
   console.log("🏦 Conta Brevo acessível");
 
   const htmlContent = `

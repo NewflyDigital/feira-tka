@@ -12,9 +12,8 @@ function Rodape() {
             <h2 className={styles.logoText}>[TKA]</h2>
 
             <p className={styles.desc}>
-              TKA Cranes develops robust crane and aerial platform solutions for
-              operations that demand continuous performance and structural
-              reliability.
+              TKA designs and manufactures cranes and aerial lifts built to
+              perform with excellence in any market.
             </p>
 
             <h4 className={styles.tagline}>
@@ -71,7 +70,10 @@ function Rodape() {
                 </a>
               </Link>
 
-              <Link legacyBehavior href="https://www.linkedin.com/company/tkacranes/">
+              <Link
+                legacyBehavior
+                href="https://www.linkedin.com/company/tkacranes/"
+              >
                 <a target="_blank" className={styles.iconBox}>
                   in
                 </a>

@@ -25,13 +25,19 @@ export default function Banner() {
         </h1>
 
         <p>
-          TKA designs and manufactures cranes and aerial platforms built to
-          operate more and deliver consistent results in any market.
+          TKA designs and manufactures cranes and aerial lifts built to perform
+          with excellence in any market.
         </p>
 
         <div className={styles.actions}>
-          <Link legacyBehavior passHref href="https://directory.conexpoconagg.com/8_0/floorplan/?hallID=L&selectedBooth=D1241">
-            <a target="_blank" className={styles.btnBlue}>Meet Us at CONEXPO →</a>
+          <Link
+            legacyBehavior
+            passHref
+            href="https://directory.conexpoconagg.com/8_0/floorplan/?hallID=L&selectedBooth=D1241"
+          >
+            <a target="_blank" className={styles.btnBlue}>
+              Meet Us at CONEXPO →
+            </a>
           </Link>
 
           <button
@@ -47,9 +53,9 @@ export default function Banner() {
           </button>
           */}
           <Link legacyBehavior passHref href="mailto:sales@tkacranes.com">
-          <a target="_blank" className={styles.btnDark} >
-            Become a Dealer
-          </a>
+            <a target="_blank" className={styles.btnDark}>
+              Become a Dealer
+            </a>
           </Link>
         </div>
       </div>

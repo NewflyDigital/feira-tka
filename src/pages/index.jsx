@@ -180,8 +180,8 @@ export default function Home() {
           </h2>
 
           <p className={styles.paragrafoLight}>
-            From service cranes to aerial platforms, each TKA solution is
-            engineered for maximum uptime and operational efficiency.
+            From service cranes to aerial lifts, TKA offers solutions for any
+            operation, with precision and robustness.
           </p>
           {/*
 
@@ -305,8 +305,10 @@ export default function Home() {
             </h2>
 
             <p className={styles.paragrafoLight}>
-              TKA is a global engineering company delivering high-performance
-              solutions for the most demanding industrial environments.
+              With a consolidated presence in more than 25 countries across 5
+              continents, TKA Cranes is synonymous with innovation and high
+              performance, developing solutions for the most demanding
+              environments.
             </p>
           </div>
         </div>
@@ -498,7 +500,7 @@ export default function Home() {
               </div>
 
               <div className={styles.standCard}>
-                <span className={styles.standLabel}>TKA Stand Location</span>
+                <span className={styles.standLabel}>TKA Booth Location</span>
                 <strong>Diamond Lot – D1241</strong>
                 <p>Las Vegas Convention Center</p>
 
@@ -599,7 +601,7 @@ export default function Home() {
                 </button>
               </form>
               */}
-              
+
               <form className={styles.form} onSubmit={handleSubmit}>
                 <label>
                   Name *
@@ -678,7 +680,6 @@ export default function Home() {
                   <p className={styles.error}>Error sending message.</p>
                 )}
               </form>
-              
             </div>
             <a
               href="https://wa.me/555481552000"
